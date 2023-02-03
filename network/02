@@ -1,0 +1,7 @@
+# Ethernet is used to connect devices in a network 
+
+ifconfig en0 | grep "broadcast" | awk '{print $NF}'
+
+# A broadcast address is a network address used to transmit 
+# to all devices connected to a multiple-access communications network
+

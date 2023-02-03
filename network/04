@@ -1,0 +1,3 @@
+# route (routing tables) get (display the route)
+
+route get default | grep "gateway" | awk '{print $NF}'

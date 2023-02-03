@@ -1,0 +1,4 @@
+# en1 is Wi-Fi (could be different on other devices)
+# ether is the MAC address
+
+ifconfig en1 | grep "ether" | awk '{print $NF}'

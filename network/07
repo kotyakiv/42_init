@@ -1,0 +1,1 @@
+nslookup who.int | grep "Server" | awk '{print $NF}'
