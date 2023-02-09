@@ -1,0 +1,5 @@
+in gui logout login
+
+ssh username@ip_address 
+
+# to switch in bash su - user_name
