@@ -1,3 +1,5 @@
-# server and website IP can be different
+# Identify the IP address of the DNS that responds to the following url: who.int
 
 nslookup who.int
+
+# server and website IP can be different

@@ -1,0 +1,9 @@
+# Thanks to the previous question and the reverse DNS 
+# find the name of your host
+
+c3r4p5.hive.fi.
+
+# find IP
+# ipconfig getpacket en0 | grep yiaddr | awk '{print $3}' 
+# find host
+# nslookup 10.13.4.5 | grep "name" | awk '{print $NF}'

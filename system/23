@@ -1,0 +1,7 @@
+# Explain how connect yourself as new user. (With graphic session and ssh session)
+
+in gui logout login
+
+ssh username@ip_address 
+
+# to switch in bash su - user_name

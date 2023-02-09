@@ -1,4 +1,8 @@
-# A network interface is the point of interconnection 
-# between a computer and  a private or public network
+# Get the list of the network interfaces of the machine 
+# without displaying any detail for these interfaces. 
+# Only the list of names.
 
 ifconfig -l
+
+# A network interface is the point of interconnection 
+# between a computer and  a private or public network

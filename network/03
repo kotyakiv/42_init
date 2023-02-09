@@ -1,4 +1,6 @@
-# en1 is Wi-Fi (could be different on other devices)
-# ether is the MAC address
+# Identify the MAC address of the Wi-Fi card
 
 ifconfig en1 | grep "ether" | awk '{print $NF}'
+
+# en1 is Wi-Fi (could be different on other devices)
+# ether is the MAC address

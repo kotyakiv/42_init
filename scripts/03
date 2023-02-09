@@ -1,0 +1,20 @@
+#!/bin/bash
+
+git add *
+git status
+
+echo "Continue y/n"
+read INPUT
+while [ $INPUT != "n" ] && [ $INPUT != "y" ] 
+do
+	echo "type y or n"
+	read INPUT
+done
+if [ $INPUT == "n" ]; then
+	echo "Stop executing the script"
+	exit 0
+fi
+
+FI
+DATE=$(date "+%d%m%Y")
+git commit -m "$DATE"
