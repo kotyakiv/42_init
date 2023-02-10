@@ -1,3 +1,6 @@
 # Find the command that kills the background command’s process
 
 pkill process_name
+
+# or kill PID
+# use jobs -l to find name or PID

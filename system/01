@@ -1,3 +1,5 @@
 # In what file can you find the installed version of your Debian?
 
 cat /etc/debian/version
+
+# If there is no rights, commands my be done by root user

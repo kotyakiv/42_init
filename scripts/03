@@ -14,6 +14,15 @@ if [ $INPUT == "n" ]; then
 	echo "Stop executing the script"
 	exit 0
 fi
-
-DATE=$(date "+%d%m%Y")
-git commit -m "$DATE"
+echo "Write a comment"
+read COMMIT
+git commit -m "$COMMIT"
+read INPUT
+while [ $INPUT != "n" ] && [ $INPUT != "y" ] 
+do
+	echo "type y or n"
+	read INPUT
+done
+if [ $INPUT == "y" ]; then
+	git push
+fi

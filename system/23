@@ -2,6 +2,6 @@
 
 in gui logout login
 
-ssh username@ip_address 
+ssh -p 2222 username@ip_address 
 
 # to switch in bash su - user_name
