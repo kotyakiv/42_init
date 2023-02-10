@@ -3,7 +3,7 @@
 git add *
 git status
 
-echo "Continue y/n"
+echo "Continue? y/n"
 read INPUT
 while [ $INPUT != "n" ] && [ $INPUT != "y" ] 
 do
@@ -17,6 +17,7 @@ fi
 echo "Write a comment"
 read COMMIT
 git commit -m "$COMMIT"
+echo "Push? y/n"
 read INPUT
 while [ $INPUT != "n" ] && [ $INPUT != "y" ] 
 do

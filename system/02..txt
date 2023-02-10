@@ -1,2 +1,0 @@
-hostname `new_name`
-# needed su rights

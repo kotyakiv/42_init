@@ -1,1 +1,0 @@
-pkill process_name

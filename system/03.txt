@@ -1,1 +1,0 @@
-su or root  /etc/hostname and reboot the system
