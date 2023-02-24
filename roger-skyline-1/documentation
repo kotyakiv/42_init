@@ -17,7 +17,7 @@ VM > Bridged adapter
 
  /etc/network/interface.d/enp0s3
  iface enp0s3 inet static
-	address find with nermask calc
+	address find with netmask calc
 	netmask 255.255.255.252
 	gateway "# ipconfig getpacket en0 | grep yiaddr | awk '{print $3}'"
 
@@ -53,10 +53,10 @@ sudo ufw status verbose
 5)
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
-`
+
 sudo vim /etc/fail2ban/jail.local
 
-"
+
 [sshd]
 mode   = aggressive
 enabled = true
@@ -86,14 +86,32 @@ sudo nano /etc/fail2ban/filter.d/http-get-dos.conf
 failregex = ^<HOST> -.*"(GET|POST).*
 
 ignoreregex =
-"`
+"
 
 #to unban
 sudo fail2ban-client set "sshd" unbanip <IP>
 
 6)
+nano /etc/default/portsentry
+TCP_MODE="atcp"
+UDP_MODE="audp"
 
+nano /etc/portsentry/portsentry.conf
+BLOCK_UDP="1"
+BLOCK_TCP="1"
+Comment all "KILL_ROUTE", except KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"
 
+Comment 
+#KILL_HOSTS_DENY="ALL: $TARGET$"
+#KILL_HOSTS_DENY="ALL: $TARGET$ : DENY"
+
+service portsentry restart
+
+tail -f /var/log/syslog
+
+to unban
+iptables -D INPUT -s 10.xxx.xxx.xxx -j DROP
+nano /etc/hosts.deny
 
 7)
 sudo systemctl list-unit-files --type=service --state=enabled
@@ -107,6 +125,11 @@ ufw
 
 8)
 Scripts
+
+install to get mails for root
+apt-get install mailutils
+apt-get install sendmail-bin
+apt-get install sendmail
 
 crontab -e
 0 4 * * 0 sh ~/auto_update.sh
