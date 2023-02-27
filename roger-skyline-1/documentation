@@ -88,6 +88,9 @@ failregex = ^<HOST> -.*"(GET|POST).*
 ignoreregex =
 "
 
+sudo fail2ban-client status http-get-dos
+sudo fail2ban-client status sshd
+
 #to unban
 sudo fail2ban-client set "sshd" unbanip <IP>
 
@@ -115,7 +118,9 @@ nano /etc/hosts.deny
 
 7)
 sudo systemctl list-unit-files --type=service --state=enabled
+
 #Needed
+apparmor
 cron.service
 fail2ban
 getty
@@ -123,6 +128,7 @@ networking
 ssh
 ufw
 
+systemctl disable 
 8)
 Scripts
 
